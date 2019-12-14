@@ -1,0 +1,51 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark text-light">
+
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#"><i class="material-icons">payment</i>
+			Bill Payment System</a>
+	</div>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav  ml-auto">
+			<li class="nav-item">
+				<a class="nav-link text-white" routerLink="home/">Home</a>
+			</li>
+	
+			<li class="nav-item" *ngIf="loggedIn()">
+				<a class="nav-link text-white"><i class="material-icons icon text-white">person</i>
+					{{this.authService.username}}
+				</a>
+			</li>
+
+			<li class="nav-item">
+					<a class="nav-link text-white" routerLink="editvendor/" *ngIf="this.authService.vendor">Edit Details</a>
+			</li>
+
+			<li class="nav-item" *ngIf="loggedIn()" (click)="this.authService.logout()">
+				<a class="nav-link text-white" routerLink="Menu/" (click)="exit()">Logout</a>
+			</li>
+			<li class="nav-item" *ngIf ="!loggedIn()">
+				<a class="nav-link text-white" routerLink="login/">Login</a>
+      </li>
+      
+			<li class="nav-item " *ngIf ="!loggedIn()">
+						
+		
+						<a class="nav-link text-white" routerLink="signup/">Signup</a>
+		
+				 
+			</li>
+
+			<!-- <li class="nav-item " *ngIf ="!loggedIn()">
+				<a class="nav-link text-white" routerLink="signupvendor/">Signup Vendor</a>
+			</li> -->
+		</ul>
+	</div>
+</nav>
+
+<router-outlet></router-outlet>

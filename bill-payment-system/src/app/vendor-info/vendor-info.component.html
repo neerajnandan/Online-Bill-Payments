@@ -1,0 +1,36 @@
+<div class="container col-lg-3 col-md-6">
+        <div class="card" style="width:400px">
+            <!-- <img src="{{items.imageUrl}}" class="card-img-top"> -->
+            <div class="card-body" >
+                <!-- <app-vendor-info *ngFor="let images of imageurl;" [image]="images"></app-vendor-info>
+                <img class="card-img-top" [src]="image" alt="Card image top" > -->
+                <div class="row typeS">
+                    <h3> <strong>   Service Type : {{vendors.vendor_type}} </strong> </h3>             
+                </div>
+
+                <div class="row vendor-name">
+                        Vendor Name: {{vendors.name}}            
+                </div>
+                     
+                <div class="row">
+                   Website: {{vendors.website}}            
+                </div>
+                    
+
+                <div class="row" style="text-align: left;">
+                   Payment Gateway: {{vendors.payment_gateway}}                    
+                </div>
+    
+                <div class = "row">
+                        <!-- <a (click)="showDetails()"> -->
+                            <button class="btn btn-success" [routerLink]="['/bill',vendors.uname]">Show Bill Details</button>
+                            <!-- </a> -->
+                </div>
+                    <!-- <button type="button" [routerLink]="['/item-edit',items.id]" class="btn btn-custom ml-auto">
+                        <i class="material-icons other_icon"> edit </i> Edit
+                    </button> -->
+    
+            </div>
+        </div>
+</div>
+   

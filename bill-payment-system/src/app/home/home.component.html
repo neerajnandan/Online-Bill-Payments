@@ -1,0 +1,40 @@
+<div class= "welcome">
+                
+    <div class="center" *ngIf="!authService.admin && !authService.user && !authService.vendor">
+                <img src="https://images.unsplash.com/photo-1561451213-0a21d2875af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80">
+
+    </div>
+        
+<!--         
+        <div *ngIf="authService.admin" >
+
+                You have been logged in as: Admin    
+
+        </div> -->
+
+
+        <div *ngIf="authService.user" >   
+                <app-search></app-search>
+                <!-- <h5>Available Services</h5> -->
+                <div class="card-deck">
+                        <div class="row mx-auto">
+                                <app-vendor-info [vendors]="vendor" *ngFor="let vendor of Vendors" >
+                                </app-vendor-info>
+                        </div>
+                </div>
+        </div>  
+
+    
+        <!-- <div *ngIf="authService.vendor" >
+            You have been logged in as: Vendor
+        </div> -->
+
+</div>
+<!-- <div class="details mt-5" *ngIf="this.authService.loggedIn">
+    <i class="material-icons " >person</i>    <br>
+    {{this.authService.username}}
+
+</div> -->
+
+
+<!-- <img src = "https://images.unsplash.com/photo-1565515636369-57f6e9f5fe79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1294&q=80" class = "home_image"> -->
